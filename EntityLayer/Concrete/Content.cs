@@ -16,8 +16,8 @@ namespace EntityLayer.Concrete
         public string ContentValue { get; set; }
         public DateTime ContentDate { get; set; }
 
-        //durumu aktif pasif şeklinde yaptım silme kullanılmayacak.
-        public bool ContentStatus { get; set; } //yeni 
+        ////durumu aktif pasif şeklinde yaptım silme kullanılmayacak.
+        //public bool ContentStatus { get; set; } //yeni 
 
         public int HeadingId { get; set; }
         public virtual Heading Heading{ get; set; }
