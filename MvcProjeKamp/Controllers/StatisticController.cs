@@ -26,11 +26,7 @@ namespace MvcProjeKamp.Controllers
             //Yazılım kategorisine ait başlık sayısı
             var totalSoftwareTitle = _context.Categories.Where(x => x.CategoryName == "Yazılım").Count();
             ViewBag.softwareCategoryTitleNumber = totalSoftwareTitle;
-<<<<<<< HEAD
-           
-=======
 
->>>>>>> ccd3db9 (scommit)
             //Yazar adında 'a' harfi geçen yazar sayısı
             var writerNameSortByA = _context.Writers.Count(x => x.WriterName.Contains("a")); 
             ViewBag.writerNameSortByA = writerNameSortByA;

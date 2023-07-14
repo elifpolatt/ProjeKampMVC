@@ -16,5 +16,7 @@ namespace BusinessLayer.Abstract
         Content GetByID(int id); //Tek deger döndürür
         void ContentRemoveBL(Content content);
         void ContentUpdateBL(Content content);
+
+       
     }
 }
