@@ -13,7 +13,7 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace MvcProjeKamp.Controllers
 {
-    
+   
     public class CategoryController : Controller
     {
         //business layerdan olusturdugum sınıfı cagırdım 
