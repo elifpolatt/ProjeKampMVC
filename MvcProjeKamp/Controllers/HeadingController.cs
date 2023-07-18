@@ -74,5 +74,21 @@ namespace MvcProjeKamp.Controllers
             headingManager.HeadingUpdateBL(p);
             return RedirectToAction("Index");
         }
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingValue = headingManager.GetByID(id);
+            //headingManager.HeadingRemoveBL(headingValue);
+            if (headingValue.HeadingStatus == true)
+            {
+                headingValue.HeadingStatus = false;
+                headingManager.HeadingRemoveBL(headingValue);
+            }
+            else
+            {
+                headingValue.HeadingStatus = true;
+                headingManager.HeadingRemoveBL(headingValue);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

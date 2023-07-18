@@ -47,8 +47,11 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 10%">
                                 Oluşturan Yazar
+                            </th>
+                            <th style="width: 10%">
+                                Durum
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -96,14 +99,30 @@
                             }
                             <tr>
                                 <td>
-                                    @item.HeadingId
+                                    @{
+                                        string durum = "";
+                                        string renk = "";
+                                        if (item.HeadingStatus == true)
+                                        {
+                                            durum = "Aktif";
+                                            renk = "text-info";
+                                        }
+                                        else
+                                        {
+                                            durum = "Pasif";
+                                            renk = "text-danger";
+                                        }
+                                    }
+                                    <p class="@renk">@durum</p>
                                 </td>
+
                                 <td>
                                     <a>
-                                        @item.HeadingName                                    </a>
+                                        @item.HeadingName
+                                    </a>
                                     <br />
                                     <small>
-                                        @*@item.HeadingDate*@  
+                                        @*@item.HeadingDate*@
                                         @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
 
                                     </small>
@@ -115,6 +134,7 @@
                                         </li>
                                     </ul>
                                 </td>
+                                <td>@item.HeadingStatus</td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -127,13 +147,28 @@
                                     <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingId">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Düzenle 
+                                        Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Sil
-                                    </a>
+                                    @{
+                                        if (item.HeadingStatus == true)
+                                        {
+                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Pasif Yap
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-warning btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Aktif Yap
+                                            </a>
+                                        }
+                                    }
+
+
                                 </td>
                             </tr>
                         }

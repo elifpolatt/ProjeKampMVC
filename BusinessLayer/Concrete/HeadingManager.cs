@@ -34,7 +34,10 @@ namespace BusinessLayer.Concrete
 
         public void HeadingRemoveBL(Heading heading)
         {
-            _headingDal.Delete(heading);
+            //_headingDal.Delete(heading);
+            //bunun yerine durum değiştirilip true yerine false yapıldı
+            heading.HeadingStatus = false;
+            _headingDal.Update(heading);
         }
 
         public void HeadingUpdateBL(Heading heading)
