@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
         {
             //_headingDal.Delete(heading);
             //bunun yerine durum değiştirilip true yerine false yapıldı
-            heading.HeadingStatus = false;
+            //heading.HeadingStatus = false;
             _headingDal.Update(heading);
         }
 
