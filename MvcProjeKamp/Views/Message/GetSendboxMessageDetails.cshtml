@@ -46,7 +46,7 @@
                             <div class="mailbox-read-info">
                                 <h5>@Html.DisplayFor(x => x.Subject)</h5><br />
                                 <h6>
-                                    Mail: @Html.DisplayFor(x => x.SenderMail)
+                                    Mail: @Html.DisplayFor(x => x.RecevierMail)
                                     <span class="mailbox-read-time float-right">@DateTime.Parse(Html.DisplayFor(x => x.MessageDate).ToString()).ToShortDateString()<span>
                                 </h6>
                             </div>

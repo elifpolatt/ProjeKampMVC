@@ -3,17 +3,12 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 //using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace MvcProjeKamp.Controllers
 {
-   
+
     public class CategoryController : Controller
     {
         //business layerdan olusturdugum sınıfı cagırdım 
